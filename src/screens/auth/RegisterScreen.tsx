@@ -31,7 +31,8 @@ const RegisterScreen: React.FC<Props> = ({ navigation }) => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [userType, setUserType] = useState<'student' | 'teacher'>('student');
+  // const [userType, setUserType] = useState<'student' | 'teacher'>('student');
+  const [userType] = useState<'student' | 'teacher'>('teacher'); // Temporarily set to teacher only
   const [acceptedPolicy, setAcceptedPolicy] = useState(false);
   const [loading, setLoading] = useState(false);
 
@@ -78,7 +79,8 @@ const RegisterScreen: React.FC<Props> = ({ navigation }) => {
           </View>
 
           <View style={styles.card}>
-            <View style={styles.typeContainer}>
+            {/* TEMPORARILY HIDDEN - Student/Teacher Toggle */}
+            {/* <View style={styles.typeContainer}>
               <TouchableOpacity
                 style={[styles.typeButton, userType === 'student' && styles.activeType]}
                 onPress={() => setUserType('student')}
@@ -91,7 +93,7 @@ const RegisterScreen: React.FC<Props> = ({ navigation }) => {
               >
                 <Text style={[styles.typeText, userType === 'teacher' && styles.activeTypeText]}>Teacher</Text>
               </TouchableOpacity>
-            </View>
+            </View> */}
 
             <Input 
               label="Full Name" 

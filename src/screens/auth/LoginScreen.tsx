@@ -90,7 +90,8 @@ const CustomModal: React.FC<CustomModalProps> = ({ visible, type, title, message
 const LoginScreen: React.FC<Props> = ({ navigation }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [userType, setUserType] = useState<'student' | 'teacher'>('student');
+  // const [userType, setUserType] = useState<'student' | 'teacher'>('student');
+  const [userType] = useState<'student' | 'teacher'>('teacher'); // Temporarily set to teacher only
   const [loading, setLoading] = useState(false);
   
   const [modalConfig, setModalConfig] = useState<{
@@ -173,7 +174,8 @@ const LoginScreen: React.FC<Props> = ({ navigation }) => {
           </View>
 
           <View style={styles.card}>
-            <View style={styles.typeContainer}>
+            {/* TEMPORARILY HIDDEN - Student/Teacher Toggle */}
+            {/* <View style={styles.typeContainer}>
               <TouchableOpacity
                 style={[styles.typeButton, userType === 'student' && styles.activeType]}
                 onPress={() => setUserType('student')}
@@ -190,7 +192,7 @@ const LoginScreen: React.FC<Props> = ({ navigation }) => {
                   Teacher
                 </Text>
               </TouchableOpacity>
-            </View>
+            </View> */}
 
             <Input
               label="Email"
